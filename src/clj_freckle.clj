@@ -8,7 +8,8 @@
 (def resources 
      {:users     {:tag :user}
       :projects  {:tag :project}
-      :entries   {:tag :entry}})
+      :entries   {:tag :entry}
+      :tags   {:tag :tag}})
 
 (defstruct search-options :people :projects :tags :from :to)
 
@@ -33,6 +34,9 @@
 
 (defn get-projects [credentials]
     (get-resource credentials :projects))
+
+(defn get-tags [credentials]
+    (get-resource credentials :tags))
 
 (defn get-entries [credentials & [options]] 
   (get-resource credentials :entries options))
